@@ -6,3 +6,4 @@ Utilizing
 
 - https://www.npmjs.com/package/offdex
 - https://www.npmjs.com/package/zeyra
+- https://www.npmjs.com/package/bytecodec

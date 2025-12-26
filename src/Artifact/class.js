@@ -1,16 +1,17 @@
 import { Bytes } from "bytecodec";
-import { generateKeyset } from "zeyra";
+import { CipherAgent, generateKeyset } from "zeyra";
 export class Artifact {
   /**
    * @param {{ id: string } & Record<string, unknown>} resource
    */
-  constructor(resource) {
-    this.id = resource.id;
+  static async fromResource(resource) {
+    // artifact meta?
+    this.cipherAgent = new CipherAgent();
+    this.key = resource.id;
     const bytes = Bytes.fromJSON(resource);
     const hash = crypto.subtle.digest("SHA-256", bytes);
     this.digest = Bytes.toBase64UrlString(hash);
-
-    this.ciphertext = Bytes.toCompressed(bytes).then((compressed) => {});
+    const compressed = await Bytes.toCompressed(bytes);
   }
-  static toResource(Artifact) {}
+  static async toResource(artifact) {}
 }
