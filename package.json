@@ -1,0 +1,14 @@
+{
+  "name": "zerodex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "offdex": "^2.0.0",
+    "zeyra": "^1.0.1"
+  }
+}
